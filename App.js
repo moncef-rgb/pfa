@@ -39,9 +39,9 @@ export default class App extends Component {
     //const { navigate } = this.props.navigation;
     return (
       <Provider store={store}>
-        <ContactForm handleSubmit={handleSubmit} />
+        {/* <ContactForm handleSubmit={handleSubmit} /> */}
         {/* <PatientForm handleSubmit={handleSubmit} /> */}
-        {/* <DoctorForm handleSubmit={handleSubmit} /> */}
+        <DoctorForm handleSubmit={handleSubmit} />
 
         {/* <Menu1 /> */}
 
