@@ -6,16 +6,18 @@
 
 //import React, { Component } from 'react';
 //import { Platform, StyleSheet, Text, View } from 'react-native';
-
+import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import { AppRegistry, View, Text, Platform, StyleSheet, Button } from 'react-native';
 import { Provider } from "react-redux";
 //import { StackNavigator } from 'react-navigation';
-
+import { NavigationContainer } from '@react-navigation/native';
 import store from "./store";
 import ContactForm from './components/ContactForm';
 import PatientForm from './components/PatientForm';
 import DoctorForm from './components/DoctorForm';
+import SignInForm from './components/SignInForm';
+import { createNativeStackNavigator , TransitionPresets} from '@react-navigation/native-stack';
 import Menu1 from './Menu';
 
 // const instructions = Platform.select({
@@ -30,6 +32,7 @@ const handleSubmit = values => {
   alert(`submitting form with values= ${values}`);
   // this.props.navigation.navigate("screens/Formulaire");
 };
+const Stack = createNativeStackNavigator();
 
 export default class App extends Component {
   // editUser = () => {
@@ -37,11 +40,34 @@ export default class App extends Component {
   // };
   render() {
     //const { navigate } = this.props.navigation;
+
     return (
-      <Provider store={store}>
+
+
+      <NavigationContainer>
+        <Provider store={store}>
+        <Stack.Navigator 
+        initialRouteName="Sign">
+        <Stack.Screen
+          name="PatientForm"
+          component={ContactForm }
+          options={{ title: 'Formulaire de patient' }}
+        />
+        <Stack.Screen name="Profile" component={DoctorForm}  options={{ title: 'Welcome1' }}/>
+        <Stack.Screen name="Profile1" component={PatientForm}  options={{ title: 'Welcome2' }}/>
+        <Stack.Screen name="Sign" component={SignInForm}  options={{ title: 'Sign In',}} 
+            
+        />
+      </Stack.Navigator>
+      </Provider>
+
+
+
+
+      {/* <Provider store={store}> */}
         {/* <ContactForm handleSubmit={handleSubmit} /> */}
         {/* <PatientForm handleSubmit={handleSubmit} /> */}
-        <DoctorForm handleSubmit={handleSubmit} />
+        {/* <DoctorForm handleSubmit={handleSubmit} /> */}
 
         {/* <Menu1 /> */}
 
@@ -53,7 +79,8 @@ export default class App extends Component {
         //accessibilityLabel="Register a User."
         /> */}
 
-      </Provider>
+      {/* </Provider> */}
+      </NavigationContainer>
 
     );
   }

@@ -70,10 +70,10 @@ const ContactComponent = props => {
 
                 <View style={{ flexDirection: 'column', margin: 30, justifyContent: 'flex-start', }}>
 
-                    <Text style={{ fontSize: 18, fontWeight: 'bold', width: 200, textAlign: 'center', margin: 10 }}>Sign In (doctor)</Text>
+                    {/* <Text style={{ fontSize: 18, fontWeight: 'bold', width: 200, textAlign: 'center', margin: 10 }}>Sign In (doctor)</Text>
 
                     <Field keyboardType="default" label="Username: " component={renderField} name="Username" placeholder='doctorName' />
-                    <Field keyboardType="email-address" label="Email: " component={renderField} name="Email" placeholder='doctorEmail' />
+                    <Field keyboardType="email-address" label="Email: " component={renderField} name="Email" placeholder='doctorEmail' /> */}
 
                     <TouchableOpacity onPress={handleSubmit} style={{ margin: 20, alignItems: 'center' }}>
                         <Text style={{
@@ -81,7 +81,7 @@ const ContactComponent = props => {
                             height: 37, width: 200, textAlign: 'center', padding: 10
                         }}>Login</Text>
                     </TouchableOpacity>
-                    <Text>**********************************************</Text>
+                    {/* <Text>**********************************************</Text> */}
                     <Text style={{ fontSize: 18, fontWeight: 'bold', width: 200, textAlign: 'center', margin: 10 }}>Fill in the form (Patient)</Text>
 
                     <Field style={{ fontSize: 8 }} keyboardType="default" label="NamePatient :" component={renderField} name="NamePatient" />
@@ -130,7 +130,7 @@ const ContactComponent = props => {
                         }}>Submit Patient</Text>
                     </TouchableOpacity>
 
-                    <Text>**********************************************</Text>
+                    {/* <Text>**********************************************</Text>
                     <Text style={{ fontSize: 18, fontWeight: 'bold', width: 200, textAlign: 'center', margin: 10 }}>Fill in the form (Doctor)</Text>
 
                     <Field style={{ fontSize: 8 }} keyboardType="default" label="LED :" component={renderField} name="LED" />
@@ -165,7 +165,7 @@ const ContactComponent = props => {
                             backgroundColor: 'steelblue', color: 'white', fontSize: 16,
                             height: 37, width: 200, textAlign: 'center', padding: 10
                         }}>Submit Doctor</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
 
 
                 </View>
